@@ -2,6 +2,10 @@
 // Easy
 
 
+//one way to solve could be sort the strings by converting them first to char array then sorting them then converting back to string
+// other way could be to make a count array of size 26 for string s then for string t do decrement in the same count array then check if any value is negative
+// that will be to avoid making two count arrays
+
 
 // My naive approach:
 // i made two separate hashmaps for each string and just compared them
