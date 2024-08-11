@@ -1,6 +1,9 @@
 // https://leetcode.com/problems/palindrome-linked-list/description/
 // Easy
 
+// CAN BE DONE WITH RECURSION, though i don't know how
+
+
 // at first as i only had linked list in my head i only tried to use linked list 
 // which has O(n) time complexity
 // and O(1) space complexity
@@ -9,16 +12,7 @@
 // so what if i create another reversed linked list then i can just run a loop to compare it 
 // but i don't need the reverse the whole thing, i can reverse only the second half of the list
 
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
+
 class Solution {
     public boolean isPalindrome(ListNode head) {
         if(head.next == null) return true;
