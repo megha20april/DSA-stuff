@@ -28,9 +28,16 @@ class Solution {
             fast = fast.next.next;
         }
 
+        
+        //One thing to be noted is that:
+        // even if i reverse the second half, it wouldn't detach itself from the first half
+        // as the last node of first half would still be refering to the last element of the reversed second half
+        // to imagine this, it would sorta become like an arrow shape.
+
         // honestly i didn't really need to do this
-      // i could've just done rev(slow) and then run the last loop acc to our remaining og list because it would never have that extra element.
-        ListNode l2 = fast != null? rev(slow.next) : rev(slow); // i hade to remove this from an if else block beacuse it was creating scope issues like l2 is not defined outside.
+        // i could've just done rev(slow) and then 
+        // run the last loop until any one of temp or og become null
+        ListNode l2 = fast != null? rev(slow.next) : rev(slow); // i had to remove this from an if else block beacuse it was creating scope issues like l2 is not defined outside.
         
 
         ListNode temp = l2;
