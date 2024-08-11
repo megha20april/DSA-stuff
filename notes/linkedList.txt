@@ -1,0 +1,42 @@
+# When reversing a part of a linked list, it doesn't split the parts into separate lists, for instance:
+1->2->3->
+we reverse starting from 2, making:
+<-2<-3
+but 1 still points to 2, so we have:
+1->2<-3
+   |
+   V
+  null
+
+
+# use fast and slow pointers to get mid
+
+# use a dummy node to merge two lists
+
+# two ways to reverse a linked list
+    first: // this makes the changes in the original list
+
+        using cur, prev and next pointers
+        prev and next initial value will be null
+        cur would be first node
+        then we make changes in the while loop
+        like,
+        next = cur.next     cur.next = prev   prev = cur    cur = next
+
+    second:  // this makes a new list
+
+        in while loop, make a new node each time using new ListNode(cur.val)
+        then do (add at first) thing to reverse the whole thing
+
+        ListNode revHead = null; // the first node's next will be null
+        ListNode curr = head;
+        
+
+        while (curr != null) {
+            ListNode temp = new ListNode(curr.val);
+            temp.next = revHead;
+            revHead = temp; // we bring revHead pointer backward bc next time we're going to insert something before this
+            curr = curr.next;
+        }
+
+        now at last, revHead will point to the head of our new list.
