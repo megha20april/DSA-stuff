@@ -9,7 +9,9 @@
 public class Solution {
     public boolean hasCycle(ListNode head) {
         ArrayList<String> ls = new ArrayList<>();
-
+        // instead of references, i could've just added the nodes itself to the arraylist
+        // that would've also done the job
+        
         ListNode temp = head;
         while(temp != null){
             ls.add(temp.toString());
