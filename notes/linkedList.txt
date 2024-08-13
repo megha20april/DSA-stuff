@@ -2,7 +2,7 @@
 whenver you have to traverse throught the linked list
 ALWAYS FUCKING ALWAYS first put temp = temp.next in it
 otherwise you forget
-and the it throws TLEEEE!!!!
+and then it throws TLEEEE!!!!
 
 
 # When reversing a part of a linked list, it doesn't split the parts into separate lists, for instance:
