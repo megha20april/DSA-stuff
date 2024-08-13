@@ -47,3 +47,22 @@ but 1 still points to 2, so we have:
         }
 
         now at last, revHead will point to the head of our new list.
+
+#When there's something like you have to make a new linked with multiple other linked list
+
+instead of using multiple loops for when one of the given linked list's length is larger, just do it in a single loop
+
+  while (l1 != null || l2 != null || carry != 0) {
+
+            // here i'll make checks to avoid the nullPointerException
+            // like if l1 is null then -> null or 0(based on requirement), otherwise l1.val or l1.next
+
+            int sum = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + carry;
+            carry = sum / 10;
+            sum %= 10;
+            dummy.next = new ListNode(sum);
+            dummy = dummy.next;
+            
+            l1 = l1 == null ? null : l1.next;
+            l2 = l2 == null ? null : l2.next;
+    }
