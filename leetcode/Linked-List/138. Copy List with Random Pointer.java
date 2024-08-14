@@ -149,3 +149,33 @@ class Solution {
     }
     
 }
+
+//================Solution 3===============
+//time and space are linear
+
+class Solution {
+    public Node copyRandomList(Node head) {
+       // we'll point from our original list's node to new node's
+        // so that we can the new corresponding nodes easily
+        // this way i won't have to do the index thing
+        HashMap<Node, Node> map = new HashMap<>();
+
+        Node temp = head;
+        while(temp != null){
+            // put a new node corresponding to each node of original list
+            map.put(temp, new Node(temp.val));
+            temp = temp.next;
+        }
+
+        temp = head;
+        while(temp != null){
+           // this becomes so each now because we have mapped every node to it's corresponding one in the new list
+            map.get(temp).next = map.get(temp.next);
+            map.get(temp).random = map.get(temp.random);
+
+            temp = temp.next;
+        }
+        return map.get(head);
+    }
+    
+}
