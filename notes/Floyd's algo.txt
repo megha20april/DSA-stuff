@@ -1,0 +1,39 @@
+Floyd's Algo:
+    ##To get the start of linked list cycle:
+        we take two pointer fast and slow
+        since there's a cycle, there will always be a node where fast and slow coincide inside the cycle
+        but the node where they coincide could be anywhere in the cycle 
+        so now to get only the start of the cycle, (this happens in another loop)
+            *Once we know for sure that a loop is present.
+            *Move the slowPointer to the start of the list,(i.e headNode) and let fastPointer remain there at the meeting point.
+            *Now move both the pointers one node at a time(Yes! You heard it right. Now even fastPointer moves at one node at a time).
+            *The point where both pointers will meet is our required start of the loop.(says floyd's algo)
+
+            How?
+            now the time comes to prove what floyd's algo says:
+                let the dist of the node at which fast and slow coincide from the start node of cycle be y
+                let the dist of the whole cycle be C
+                let the dist from start of linked list(0node) to start of cycle(2node) be x
+
+                Distance travelled by slowPointer before meeting= x + c - y
+
+                Distance travelled by fastPointer before meeting = (x + c) + c - y 
+                                                                    = x + 2c - y
+                Since fastPointer travels with double the speed of slowPointer
+                2 * slow's dist = fast's dist
+                    2(x+c-y)= x+2c-y
+
+                => x=y
+
+                So by moving slowPointer to the start of the linked list, 
+                and making both slowPointer and fastPointer move one node at a time, 
+                they both will reach the point where the loop starts in the linked list.
+
+
+    ## To get length of cycle:
+        when slow and fast pointer meet in the cycle
+        make the fast pointer stop
+        and just move the slow pointer again and increment the counter
+        so that it'll traverse through the whole cycle again and we'll count each time it moves
+        and when it again meets the fast pointer
+        return the count
