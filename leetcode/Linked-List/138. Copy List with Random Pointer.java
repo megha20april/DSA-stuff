@@ -179,3 +179,6 @@ class Solution {
     }
     
 }
+// yet another last soloution
+// O(1) space solution, where we interweave the original list and the new list. For instance 1o->1n->2o->2n (o=old, n=new). To assign the .random on 1new, we look at the .random of 1old, and take whatever that is pointing to's next, and assign it to 1n.random,
+// then we separate the lists by jumping twice
