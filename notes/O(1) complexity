@@ -1,0 +1,20 @@
+Normally we use maps to maintain constant time complexity
+
+But maps don't have order
+
+So, if you want order AND constant time complexity
+We use a combination of DOUBLY LINKED LIST and HASHMAP 
+
+HASHMAP MAPPING: key => Corresponding Node in list
+
+AND MOREOVER, to avoid encountering too many edge cases which lead to NULL POINTER EXCEPTION
+we make head and tail as dummy nodes
+
+HEAD => (-1, -1)
+TAIL => (-1, -1)
+
+Order will be reverse:
+  MOST RECENT ELEMENT: right next to head
+  LEAST RECENT ELEMENT: prev element to tail
+
+TO READ MORE ABOUT WHY WE USE A COMBINATION OF DOUBLY AND HASHMAP, GO TO => LRU cache problem
