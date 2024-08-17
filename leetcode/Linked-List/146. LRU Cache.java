@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/lru-cache/description/
 // Medium
 
+
 // O(1) time complexity
 
 // your first thought could be to do this with map, BUT it doesn't have any order and you have to track the least used node, so we can't use that
@@ -14,6 +15,96 @@
 // for that we'll have to get that node, without traversing through it
 // hence we map from key --> Node
 
+// TIPPP
+// to avoid so many edge cases use two dummy nodes => head and tail
+// the order will be reverse, the most recently used element will be added right after head
+// and when you wanna remove the least used element, remove the prev element of tail
+
+//Better code
+class LRUCache {
+    int capacity;
+
+    class Node{
+        Integer key;
+        Integer val;
+        Node next;
+        Node prev;
+
+        Node(Integer key, Integer val){
+            this.key = key;
+            this.val = val;
+        }
+    }
+
+    Node head;
+    Node tail;
+    HashMap<Integer, Node> map;
+
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
+        head = new Node(-1, -1);
+        tail = new Node(-1, -1);
+        head.next = tail;
+        tail.prev = head;
+        map = new HashMap<>();
+    }
+
+    private void removeInBetween(Node n){
+        Node pre = n.prev;
+        Node nex = n.next;
+        pre.next = nex;
+        nex.prev = pre;
+    }
+
+    private void addFirst(Node newNode){
+        newNode.prev = head;
+        newNode.next = head.next;
+        head.next.prev = newNode;
+        head.next = newNode;
+    }
+
+    public int get(Integer key) {
+        if(map.containsKey(key)){
+            Node n = map.get(key);
+            
+            if(n == head.next) return n.val;
+            removeInBetween(n);
+            
+            addFirst(n);
+            return n.val;
+        }
+        return -1;
+    }
+
+    public void put(Integer key, int value) {
+        if(map.containsKey(key)){
+            Node n = map.get(key);
+            n.val = value;
+            if(n == head.next) return;
+            
+            removeInBetween(n);
+            addFirst(n);
+        }
+        else if(capacity > 0){
+            Node newNode = new Node(key, value);
+            addFirst(newNode);
+            map.put(key, newNode);
+            capacity--;
+        }
+        else{
+            map.remove(tail.prev.key);
+            
+            removeInBetween(tail.prev);
+            
+            Node newNode = new Node(key, value);
+            addFirst(newNode);
+
+            map.put(key, newNode);
+        }
+    }
+}
+
+// solution with too many edge cases
 class LRUCache {
     int capacity;
     class Node{ // simple node class
