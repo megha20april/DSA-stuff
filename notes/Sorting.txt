@@ -2,17 +2,27 @@
 
 Counting sort / Bucket sort: good for things that are bounded by what can be included, for instance sorting a word of only letters. Runs in linear time but only good if the range is small. For instance problem 75: Sort Colors. I think the time is n+m and space is m.
 
-Insertion Sort: for each element, find where it goes relative to the current sorted area. So 12, 11, 13, 5, 6. The first pass we fix 11 and 12. The next pass we fix the 13. Then we add the 5 to the beginning, then the 6. n^2 time as insertion is O(n).
+Insertion Sort: for each element, find where it goes relative to the current sorted area. 
+                So 12, 11, 13, 5, 6. The first pass we fix 11 and 12. The next pass we fix the 13. 
+                Then we add the 5 to the beginning, then the 6. n^2 time as insertion is O(n).
+                forloop1: 0 to n-2{
+                  forloop2: i+1 to 1{
+                    if j < j -1 (element at that) => swap
+                    else break; // because we know that left to j is already been sorted, so if the j is not smaller than its prev element
+                                   then it must be larger than all of the left-side elements
+                  }
+                }
 
 Merge sort: recurse down to base cases, merge lists, and bubble up merged lists. Can use pointers to make slightly more efficient. Can also use for merging sorted linked lists or sorted lists. Viewable in 912: Sort an Array. n log n time. Can be done in-place or with n space. Using pointers to determine the range we sort still is n space, but less total memory than re-allocating subarrays every time we divide. Both implementations are listed in 912: Sort an Array. EDIT LATER: My initial guess was the naive recursive merge sort is n space as we have that much space at any time, in place recursive is logN for the stack frame, and I thought there may have been an iterative in place in O(1) space, but I'm not sure these are right now, seems like iterative still uses a stack or something, but I don't know. I tried an in place merge sort but gpt couldn't figure out how to do the in-place merging, I didn't try myself.
 
 Quick sort: pick a pivot, partition based on that pivot. Problem 215 uses a quickselect alg.
 
-Bubble sort: n^2 => worst, n => best, bubble bigger elements up to last. 6, 0, 3, 5. Bubble up the biggest element. 
+Bubble sort: n^2 => worst, n => best, this is a stable sorting algo
+             bubble bigger elements up to last. 6, 0, 3, 5. Bubble up the biggest element.
              Compare 6 and 0, bubble 6 up by swapping them. Then compare 6 and 3, and repeat. 
              Then redo the process by finding the second biggest number and bubbling it up.
-              first loop: 0 to length - 1
-              second loop: 1 to length - i - 1 (after each iteration the last position will have the largest element, so don't need to check that position in next iteration)
+             first loop: 0 to length - 1
+             second loop: 1 to length - i - 1 (after each iteration the last position will have the largest element, so don't need to check that position in next iteration)
 
               CHECK IF THE ARRAY IS ALREADY SORTED
               by using a boolean value => swapped
@@ -27,9 +37,10 @@ Bubble sort: n^2 => worst, n => best, bubble bigger elements up to last. 6, 0, 3
                 if(!swapped) break; // if it didn't go in the upper loop's condition then that means it was already sorted, hence break
               }
 
-Selection Sort: n^2 (in both worst and best case), select(/search) the maximum element from the list and swap it with last
+Selection Sort: n^2 (in both worst and best case), this is an unstable sorting algo 
+            select(/search) the maximum element from the list and swap it with last
             then redo the process by finding the max element in the rest of the array(except last index) then swap it with second last
-            first loop: 0 to length - 1{
+            first loop: 0 to length - 2{
               max = 0
               second loop: 1 to length - i - 1{
                 compare j index element with max index element
