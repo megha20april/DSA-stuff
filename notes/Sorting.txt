@@ -48,6 +48,16 @@ Selection Sort: n^2 (in both worst and best case), this is an unstable sorting a
               swap max index element with [length - i - 1] index element
             }
 
+Cyclic Sort: when the elements of array are from 1 to arr.length (1 to n) then use this
+             it can sort the array in one pass O(n) time complexity
+            int i = 0;
+            while(i < arr.length){
+                if (arr[i] != i + 1) {
+                    int temp = arr[i];
+                    arr[i] = arr[arr[i] - 1];
+                    arr[temp - 1] = temp;
+                }else i++;
+            }
 
 Heap sort: Heapify an array in n time by using sift down, starting from the leaves. Then pop in log n time for n elements.
 
