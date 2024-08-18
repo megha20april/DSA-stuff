@@ -8,7 +8,7 @@ Merge sort: recurse down to base cases, merge lists, and bubble up merged lists.
 
 Quick sort: pick a pivot, partition based on that pivot. Problem 215 uses a quickselect alg.
 
-Bubble sort: n^2, bubble bigger elements up to last. 6, 0, 3, 5. Bubble up the biggest element. 
+Bubble sort: n^2 => worst, n => best, bubble bigger elements up to last. 6, 0, 3, 5. Bubble up the biggest element. 
              Compare 6 and 0, bubble 6 up by swapping them. Then compare 6 and 3, and repeat. 
              Then redo the process by finding the second biggest number and bubbling it up.
               first loop: 0 to length - 1
@@ -26,6 +26,17 @@ Bubble sort: n^2, bubble bigger elements up to last. 6, 0, 3, 5. Bubble up the b
                 }
                 if(!swapped) break; // if it didn't go in the upper loop's condition then that means it was already sorted, hence break
               }
+
+Selection Sort: n^2 (in both worst and best case), select(/search) the maximum element from the list and swap it with last
+            then redo the process by finding the max element in the rest of the array(except last index) then swap it with second last
+            first loop: 0 to length - 1{
+              max = 0
+              second loop: 1 to length - i - 1{
+                compare j index element with max index element
+              }
+              swap max index element with [length - i - 1] index element
+            }
+
 
 Heap sort: Heapify an array in n time by using sift down, starting from the leaves. Then pop in log n time for n elements.
 
