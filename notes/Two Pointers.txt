@@ -1,0 +1,8 @@
+TWO POINTERS
+
+- initialize two pointers that will be used to track or update things.
+- in linked list often called as slow and fast
+- in binary search initialized at both ends
+- or initialized according to needs
+
+Ex. 26. Remove Duplicates from Sorted Array and 27. Remove Element etc.
