@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/remove-element/
 // Easy
 
+// TWO POINTERS
 
 // In this solution, i couldn't find another way to keep track of the occurences of val to swap the non-val numbers with.
 // so i thought let's keep track of no-val numbers only whnever there'll be a val the non-val counter won't consider it.
