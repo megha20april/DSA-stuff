@@ -1,7 +1,8 @@
 // https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
 // Easy
 
-// Time complexity: O(n+m)
+// Time complexity: O(n+m) and space complexity: O(n)
+// if done with sorting the time complexity will be O(nlogn + mlogm) but constant space complexity
 
 // here we have to retain the duplicacy of common elements hence we'll use hashmaps otherwise we could've just used hashset.
 class Solution {
@@ -32,3 +33,13 @@ class Solution {
         return arr1;
     }
 }
+
+//======================FOLLOW UPS===========================
+
+// 1st follow up:
+     in case of already sorted arrays, we can use the two pointers algorithm which will save us space complexity.
+
+// 2nd follow up:
+    use the smaller array for the frequency map to save space complexity.
+
+         
