@@ -57,7 +57,7 @@ One Node ---> two pointers ----> left and right
 
   
 - no. of nodes on level no. i ---> 2^i nodes
-- 
+
 ![image](https://github.com/user-attachments/assets/b7a18e01-7ac1-4db1-a6ca-b0c0a68915af)
 
 - total no. of leaf nodes in perfect BT ---> 2^h (height)
