@@ -9,10 +9,10 @@ trees are similar to linked list based on structure
 
 in this case all the operations do become same as linked list, this is called an unbalanced binary tree.
 
-### Some of the trees usecases:
+## Some of the trees usecases:
 - file system, ml decision trees, networking algos, file compression, other data structures like graph and heap etc...
 
-### Properties
+## Properties
 - SIZE ---> Total no. of nodes
 - CHILD and PARENT relationship
 - SIBLING ---> if they have the same parent
@@ -22,9 +22,32 @@ in this case all the operations do become same as linked list, this is called an
 - LEVEL ---> height of root - height of that node ---> level of root is 0.
 - ANCESTOR and DESCENDANT ---> An ancestor of a node is any other node on the path from the node to the root. A descendant is the inverse relationship of ancestor.
 
-### Types of Binary tree
-
-#### Complete Binary Tree - all the levels are full apart from the last level, but the last left fills from left to right.
-- 
-
 One Node ---> two pointers ----> left and right
+
+## Types of Binary tree
+
+### Complete Binary Tree
+- all the levels are full apart from the last level, but the last left fills from left to right.
+
+### Full Binary Tree
+- every node has either 0 or 2 children.
+- usecase --> compression of files
+
+### Perfect Binary Tree
+- All levels are full
+- hence, all the leaf nodes are full in the last level.
+- it's a combination of full and complete.
+
+### Height Balanced Binary Tree
+- avg height is O(logN)
+
+### Skewed Binary Tree
+- every node has one child --> like linked list
+
+### Ordered Binary Tree
+- every node has some property like in BST
+
+
+## Some more Properties
+
+- Perfect BT ---> height h ----> perfect bt has max nodes ---> 2_^(h+1) - 1
