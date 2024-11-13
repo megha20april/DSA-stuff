@@ -50,4 +50,17 @@ One Node ---> two pointers ----> left and right
 
 ## Some more Properties
 
-- Perfect BT ---> height h ----> perfect bt has max nodes ---> 2_^(h+1) - 1
+- Perfect BT ---> height h ----> perfect bt has max nodes ---> 2^(h+1) - 1
+  sum of gp is  Sn = a(1 - r^n) / (1 - r) where r is 2 and n is h+1(total levels)
+  
+![image](https://github.com/user-attachments/assets/93543180-05f2-4c78-85c6-1bab0ec0aba5)
+
+  
+- no. of nodes on level no. i ---> 2^i nodes
+- 
+![image](https://github.com/user-attachments/assets/b7a18e01-7ac1-4db1-a6ca-b0c0a68915af)
+
+- total no. of leaf nodes in perfect BT ---> 2^h (height)
+- now internal nodes will be:
+
+![image](https://github.com/user-attachments/assets/5e2dde74-e03a-4703-953c-896b84ecfb4f)
