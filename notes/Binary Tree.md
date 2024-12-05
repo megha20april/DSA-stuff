@@ -18,8 +18,12 @@ in this case all the operations do become same as linked list, this is called an
 - SIBLING ---> if they have the same parent
 - EDGE ---> line connecting two nodes
 - LEAF NODES ---> no children
-- HEIGHT ---> max no. of edges from the node to the leaf nodes. (you can't go backwards when counting height)
-- LEVEL ---> height of root - height of that node ---> level of root is 0.
+- HEIGHT ---> max no. of edges from the node to the leaf nodes. (you can't go backwards when counting height) ---> The height of a tree is a height of the root.
+  
+  ![image](https://github.com/user-attachments/assets/e76aa1bb-3f99-4d3c-8c13-c2bb1c1f5cd9)
+
+- DEPTH ---> no. of edges between that node and the root ---> depth of root is 0.
+- LEVEL ---> if level of root is 0, then level = depth otherwise level = depth + 1
 - ANCESTOR and DESCENDANT ---> An ancestor of a node is any other node on the path from the node to the root. A descendant is the inverse relationship of ancestor.
 - DEGREE ---> the no. of nodes a node is pointing to. Since we're talking about binary trees, the max degree a node can have is 2.
 
