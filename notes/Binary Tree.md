@@ -21,35 +21,62 @@ in this case all the operations do become same as linked list, this is called an
 - HEIGHT ---> max no. of edges from the node to the leaf nodes. (you can't go backwards when counting height)
 - LEVEL ---> height of root - height of that node ---> level of root is 0.
 - ANCESTOR and DESCENDANT ---> An ancestor of a node is any other node on the path from the node to the root. A descendant is the inverse relationship of ancestor.
+- DEGREE ---> the no. of nodes a node is pointing to. Since we're talking about binary trees, the max degree a node can have is 2.
+
 
 One Node ---> two pointers ----> left and right
 
 ## Types of Binary tree
 
-### Complete Binary Tree
-- all the levels are full apart from the last level, but the last left fills from left to right.
+### On the basis of no. of children
 
-### Full Binary Tree
+### Full Binary Tree (/Proper Binary Tree)
 - every node has either 0 or 2 children.
 - usecase --> compression of files
+  ![image](https://github.com/user-attachments/assets/39722a13-212d-490f-81e9-5b62c165123d)
+
+### Degenerate or pathalogical tree
+- every node has one child --> like linked list
+  
+ ![image](https://media.geeksforgeeks.org/wp-content/uploads/20221124105941/degeneratetree.png)
+
+- A skewed binary tree is a pathological/degenerate tree in which the tree is either dominated by the left nodes or the right nodes. Thus, there are two types of skewed binary tree: left-skewed binary tree and right-skewed binary tree.
+  
+  ![image](https://media.geeksforgeeks.org/wp-content/uploads/20221130172501/skewed1.png)
+
+
+### On the basis of the completion of levels
+
+### Complete Binary Tree
+- all the levels are full apart from the last level, but the last left fills from left to right.
+- The last leaf element might not have a right sibling i.e. a complete binary tree doesn’t have to be a full binary tree.
+
+    ![image](https://media.geeksforgeeks.org/wp-content/uploads/20221130172411/completedrawio.png)
 
 ### Perfect Binary Tree
 - All levels are full
-- hence, all the leaf nodes are full in the last level.
+- hence, all the leaf nodes are on the same level.
 - it's a combination of full and complete.
+
+  ![image](https://media.geeksforgeeks.org/wp-content/uploads/20221124094547/perfect.png)
 
 ### Height Balanced Binary Tree
 - avg height is O(logN)
+- It is a type of binary tree in which the difference between the height of the left and the right subtree for each node is either 0 or 1.
 
-### Skewed Binary Tree
-- every node has one child --> like linked list
+   ![image](https://www.growingwiththeweb.com/images/2015/11/14/balanced-trees.svg)
+
+- Balanced Binary Search trees are performance-wise good as they provide O(log n) time for search, insert and delete.
+- Reason for above statement: Because in a BST, when you're searching or inserting or deleting, the system would only go over one node at a level, hence it'll always max to max traverse to logn no. of nodes as height is logn.
+
+    ![image](https://github.com/user-attachments/assets/5ab48221-79e8-48ab-9a75-4d1308fa2265)
+
+    ![image](https://github.com/user-attachments/assets/96196c83-f022-4590-9895-927af167ce06)
+
 
 ### Ordered Binary Tree
 - every node has some property like in BST
 
-### Degree of Nodes
-- degree is the no. of nodes a node is pointing to.
-- since we're talking about binary trees, the max degree a node can have is 2.
 
 ## Some more Properties
 
@@ -172,7 +199,3 @@ private void prettyPrint(Node n, int levelIndent){
 
 Output:
 ![image](https://github.com/user-attachments/assets/acdf6d14-5078-4bdd-9c8a-c1ad56cc3b8b)
-
-
-   
- 
