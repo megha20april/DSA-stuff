@@ -37,6 +37,7 @@ One Node ---> two pointers ----> left and right
 ### Full Binary Tree (/Proper Binary Tree)
 - every node has either 0 or 2 children.
 - usecase --> compression of files
+  
   ![image](https://github.com/user-attachments/assets/39722a13-212d-490f-81e9-5b62c165123d)
 
 ### Degenerate or pathalogical tree
