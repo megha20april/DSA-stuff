@@ -5,3 +5,8 @@
   ![image](https://github.com/user-attachments/assets/10af6483-aeef-4724-a49e-391c11bfe6be)
 
  
+Problem of BST =====>> Skewed BST
+  ![image](https://github.com/user-attachments/assets/946d4367-b2bf-480a-9b3e-17776481b972)
+
+For function implementations for BST (like insert, populate, populate sorted, balanced),
+Refer Intellij code
