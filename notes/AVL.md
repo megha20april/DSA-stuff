@@ -3,7 +3,7 @@ Problem of BST are skewed trees (which is pretty much same as a linked list, hen
 # AVL TREES (One of the example of Balancing trees)
 Adelson-Velskii and Landis
 
-For every Node, | height(left subtree) - height(right subtree) | <= 1
+For every Node, | height(left subtree) - height(right subtree) | <= 1 or we can say it can be -1, 0 or 1 (as sometimes you can get -2 value which means one side is heavier, and needs to be rotated in the opposite side to become balanced.
 
 ![image](https://github.com/user-attachments/assets/1d65fea2-4550-4445-9d11-2a7fb77b2b19)
 
