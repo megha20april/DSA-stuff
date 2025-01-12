@@ -55,7 +55,7 @@ class Solution {
 
 class Solution {
     public Node connect(Node root) {
-        
+        if(root == null) return null;
         // we'll have two loops
         // the outer one will move from level to level i.e. top to bottom
         // and the inner one will move from left to right inside a level to connect the nodes of the next level
@@ -65,7 +65,7 @@ class Solution {
         // at the last level, we don't have to do anything
         // our work is done at second last level
         // hence we use the below conditions
-        while(curLevel != null && curLevel.left != null){
+        while(curLevel.left != null){
             Node temp = curLevel;
             
             while(temp != null){ 
