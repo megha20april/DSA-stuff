@@ -53,10 +53,16 @@ One Node ---> two pointers ----> left and right
 ### On the basis of the completion of levels
 
 ### Complete Binary Tree
-- all the levels are full apart from the last level, but the last left fills from left to right.
+- all the levels are full apart from the last level, but the last level fills from left to right.
 - The last leaf element might not have a right sibling i.e. a complete binary tree doesn’t have to be a full binary tree.
 
     ![image](https://media.geeksforgeeks.org/wp-content/uploads/20221130172411/completedrawio.png)
+
+### Full Binary Tree
+- all the nodes either have 0 or 2 child nodes.
+
+  ![image](https://github.com/user-attachments/assets/3c7a3fa5-5f30-4515-b76d-92d0bdac0b2c)
+
 
 ### Perfect Binary Tree
 - All levels are full
@@ -111,6 +117,8 @@ One Node ---> two pointers ----> left and right
       internal nodes ==> 2^(logn) - 1 = n - 1
 
   #### Hence, No. of leaf nodes = no. of internal nodes + 1 in a strict Binary Tree
+
+  ![image](https://github.com/user-attachments/assets/4c342874-dd22-40be-9389-b683667cfde4)
 
 
  ## Implementation
