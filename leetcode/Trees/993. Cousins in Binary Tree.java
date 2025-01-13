@@ -73,3 +73,58 @@ class Solution {
         return false;
     }
 }
+
+
+
+// Solution 2
+
+// this approach is like very straight-forward.
+// the first condition was to check if thery're on the same level or not, so we check that
+// then the second condition was that they should have different parent, hence we also check that
+// if both the above conditons are satisfied, we just return true!!
+
+class Solution {
+    public boolean isCousins(TreeNode root, int x, int y) {
+       // checking if on same level or not
+       if(Level(root, x, 0) != Level(root, y, 0)) return false;
+
+       // checking if they have different parent
+       if(Parent(root, x, -1) == Parent(root, y, -1)) return false;
+
+       // if(isSibling(root, x, y)) return false;  ---> too complicated, but noteworthy
+
+       // if both conditions are satisfied, then return true
+       return true; 
+    }
+
+    int Level(TreeNode node, int n, int level){
+        if(node == null) return -1; // we couldn't find the node
+
+        // found the node
+        if(node.val == n) return level;
+
+        // if we don't find the node, then we go to the left route
+        int l = Level(node.left, n, level+1);
+        // if we did get a positive value, that means that we found the node
+        // hence we can just return it without checking any further
+        if(l > 0) return l;
+
+        // if we didn't find it on the left way, then we go to the right route
+        return Level(node.right, n, level+1); // since we don't have any other route left, we just return the response we get from this
+    }
+
+    int Parent(TreeNode node, int n, int parent){
+        if(node == null) return -1; // we couldn't find the node
+        if(node.val == n) return parent;
+
+        int l = Parent(node.left, n, node.val);
+        if(l > 0) return l;
+        return Parent(node.right, n, node.val);
+    }
+
+    boolean isSibling(TreeNode n, int x, int y){
+        if(n == null) return false;
+                                                        
+        return ((n.left != null && n.right != null && ((n.left.val == x && n.right.val == y) || (n.left.val == y && n.right.val == x))) || isSibling(n.left, x, y) || isSibling(n.right, x, y));
+    }
+}
