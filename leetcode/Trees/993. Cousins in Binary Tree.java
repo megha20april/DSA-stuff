@@ -7,6 +7,7 @@
 // so for that i used integer pointers which will store the parent's value (all the nodes value are UNIQUE)
 // with initial value as -1 which will tell me if they exist on the same level or not
 
+// time and space are both linear, but here worst case space complexity will be in case of a perfect tree's leaf nodes level which will be n/2
 class Solution {
     public boolean isCousins(TreeNode root, int x, int y) {
 
@@ -82,6 +83,9 @@ class Solution {
 // the first condition was to check if thery're on the same level or not, so we check that
 // then the second condition was that they should have different parent, hence we also check that
 // if both the above conditons are satisfied, we just return true!!
+
+// time and space are both linear, but here worst case space complexity will be when the recursion call stack contains the maximum height of the tree
+// in case of balanced BT it will be O(logN) but in a skewed tree, it will be O(N). Hence, our final answer will be O(N)
 
 class Solution {
     public boolean isCousins(TreeNode root, int x, int y) {
