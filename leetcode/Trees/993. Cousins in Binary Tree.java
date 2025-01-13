@@ -122,6 +122,8 @@ class Solution {
         return Parent(node.right, n, node.val);
     }
 
+    // another way of checking same parents
+    // BUT i found it way more complicating, because of all the conditionals
     boolean isSibling(TreeNode n, int x, int y){
         if(n == null) return false;
                                                         
