@@ -10,3 +10,55 @@ Problem of BST =====>> Skewed BST
 
 For function implementations for BST (like insert, populate, populate sorted, balanced),
 Refer Intellij code
+
+## Traversal Methods
+
+### 1. Pre-order
+- Node -> Left -> Right
+- Used for evaluating math expressions
+- or making a copy
+- in conversion of string or array to tree, which is called Serialization
+
+```java
+
+private void preOrder(Node n){
+  if(n == null) return;
+  System.out.println(n.val);
+  preOrder(n.left);
+  preOrder(n.right);
+}
+
+```
+
+  
+### 2. In-order
+- Left -> Node -> Right
+- Used for **visiting nodes of a BST in a sorted manner**
+
+![image](https://github.com/user-attachments/assets/77672fe5-17cb-4717-9297-96f2c7c46ac5)
+
+```java
+
+private void inOrder(Node n){
+  if(n == null) return;
+  inOrder(n.left);
+  System.out.println(n.val);
+  inOrder(n.right);
+}
+
+```
+### 3. Post-order
+- Left -> Right -> Node
+- used when you wanna delete binary tree
+- used in bottom-up calculations like calc diameter or height etc.
+
+```java
+
+private void postOrder(Node n){
+  if(n == null) return;
+  postOrder(n.left);
+  postOrder(n.right);
+  System.out.println(n.val);
+}
+
+```
