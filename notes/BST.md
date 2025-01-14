@@ -49,7 +49,11 @@ private void inOrder(Node n){
 ```
 ### 3. Post-order
 - Left -> Right -> Node
-- used when you wanna delete binary tree
+- used when you wanna delete a binary tree
+    - when you want to delete a tree, you can't just delete the node,
+    - because then there will be no pointer for its sub-trees which will cause memory wasteage
+    - hence, first you delete all the left nodes of a tree's root
+    - then all the right nodes and lastly the root itself
 - used in bottom-up calculations like calc diameter or height etc.
 
 ```java
