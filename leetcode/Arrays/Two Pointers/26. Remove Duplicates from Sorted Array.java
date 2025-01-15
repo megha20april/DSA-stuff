@@ -15,7 +15,7 @@ class Solution {
                 // this is telling us that this non-duplicate element can take the 2nd positon in the array
                 // since it's the second unique no.
                 
-                nonDuplicate++; // this will only move when there's a non-duplicate number
+                nonDuplicate++; // this will only be incremented when there's a non-duplicate number
                 nums[nonDuplicate - 1] = nums[i]; // swap with the last non-duplicate no.'s place
             }
         }
