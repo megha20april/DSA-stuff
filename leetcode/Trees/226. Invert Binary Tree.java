@@ -3,6 +3,8 @@
 
 
 // pretty easy as at each node, you just have to swap its left and right subtrees.
+// time is linear as it goes over each node only once
+// space is also linear, as in the worst case, which is a skewed tree, height is equal to n
 class Solution {
     public TreeNode invertTree(TreeNode root) {
         invert(root);
