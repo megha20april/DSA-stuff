@@ -15,10 +15,10 @@ class Solution {
         return arr.get(k - 1);
     }
     public void inOrder(TreeNode node, ArrayList<Integer> arr, int k){
-        if(arr.size() >= k) return; 
         if(node == null) return;
-
         inOrder(node.left, arr, k);
+        if(arr.size() >= k) return; // before adding any element i'll check if it already has k element
+        // bc if it does then you don't need to do anything, just return!
         arr.add(node.val);
         inOrder(node.right, arr, k);
     }
