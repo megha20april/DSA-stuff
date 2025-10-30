@@ -18,7 +18,21 @@
 
 ---
 
-## 3. How ArrayList Expands
+## 3. Utility Methods from Arrays Class
+
+| Method               | Description                                 |
+|----------------------|---------------------------------------------|
+| sort(arr)            | Sorts the array                             |
+| binarySearch(arr, key)| Searches for a key in a sorted array       |
+| copyOf(arr, newLength)| Copies an array to a new length            |
+| fill(arr, val)       | Fills an array with a specific value        |
+| equals(arr1, arr2)   | Compares two arrays                         |
+| toString(arr)        | Converts an array to a string               |
+| asList(arr)          | Converts an array to a list                 |
+
+---
+
+## 4. How ArrayList Expands
 
 - When adding an element **beyond capacity**, `ArrayList` creates a **new array (bigger size, usually 1.5x or 2x)** and copies the existing elements over.
 - Example:
